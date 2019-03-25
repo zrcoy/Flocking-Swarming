@@ -22,22 +22,22 @@ public class Flock : MonoBehaviour {
     // Use this for initialization
     void Start () {
         // Instantiate the first obstacle right on top of the flock position
-        Instantiate(ObstaclePrefab, transform.position, Random.rotation);
+        //Instantiate(ObstaclePrefab, transform.position, Random.rotation);
 
-        //Randomize position of obstacles
-        for (int i = 0; i < numberOfObstacles; i++)
-        {
-            // Spawn within a range called spawnRadius
-            Vector3 pos = transform.position + Random.insideUnitSphere * spawnRadius;
-            Instantiate(ObstaclePrefab, pos, Random.rotation);
-        }
+        ////Randomize position of obstacles
+        //for (int i = 0; i < numberOfObstacles; i++)
+        //{
+        //    // Spawn within a range called spawnRadius
+        //    Vector3 pos = transform.position + Random.insideUnitSphere * spawnRadius;
+        //    Instantiate(ObstaclePrefab, pos, Random.rotation);
+        //}
 
         //Create an array with 20(numberOfBoids) boids 
         boids = new GameObject[numberOfBoids];
         for (int i = 0; i < numberOfBoids; i++)
         {
             // Spawn within a range called spawnRadius
-            Vector3 pos = transform.position + Random.insideUnitSphere * spawnRadius;
+            Vector3 pos = target.transform.position + Random.insideUnitSphere * spawnRadius;
             boids[i] = (GameObject) Instantiate(boidPrefab, pos,Random.rotation);
 
             // Get Boid Script component of this boid object, Assign each boid 's flock is this flock

@@ -125,9 +125,9 @@ public class Boid : MonoBehaviour {
         // then renormalize again
         direction = Vector3.Normalize(direction);
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position+direction, 0.1f);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawSphere(transform.position+direction, 0.1f);
+    //}
 }
